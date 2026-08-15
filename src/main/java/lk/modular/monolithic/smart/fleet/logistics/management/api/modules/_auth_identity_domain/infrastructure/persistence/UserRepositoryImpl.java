@@ -6,6 +6,9 @@ import lk.modular.monolithic.smart.fleet.logistics.management.api.modules._auth_
 import lk.modular.monolithic.smart.fleet.logistics.management.api.modules._auth_identity_domain.infrastructure.persistence.jpa.JpaUserRepository;
 import lk.modular.monolithic.smart.fleet.logistics.management.api.modules._auth_identity_domain.infrastructure.persistence.persistenceMapper.UserPersistenceMapper;
 
+import java.util.Optional;
+import java.util.UUID;
+
 public class UserRepositoryImpl implements UserRepository {
 
     //inject required dependencies
@@ -19,6 +22,21 @@ public class UserRepositoryImpl implements UserRepository {
         this.jpaUserRepository = jpaUserRepository;
         this.userPersistenceMapper = userPersistenceMapper ;
     }
+
+    /* __HELPER_METHODS__ */
+
+    //user find by id
+    @Override
+    public Optional<User> findById(UUID userId) {
+        return jpaUserRepository.findById(userId)
+                .map(userPersistenceMapper::toDomainModel);
+    }
+
+
+
+
+    /* __PUBLIC_METHODS__ */
+
 
     //save user
     @Override

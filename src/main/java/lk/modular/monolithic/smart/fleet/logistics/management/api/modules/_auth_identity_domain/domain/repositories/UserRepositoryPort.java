@@ -5,7 +5,7 @@ import lk.modular.monolithic.smart.fleet.logistics.management.api.modules._auth_
 import java.util.Optional;
 import java.util.UUID;
 
-public interface UserRepository{
+public interface UserRepositoryPort {
 
     //user find by id
     Optional<User> findById(UUID userId);

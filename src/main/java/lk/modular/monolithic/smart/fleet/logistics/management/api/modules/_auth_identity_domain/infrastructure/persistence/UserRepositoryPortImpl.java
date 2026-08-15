@@ -1,7 +1,7 @@
 package lk.modular.monolithic.smart.fleet.logistics.management.api.modules._auth_identity_domain.infrastructure.persistence;
 
 import lk.modular.monolithic.smart.fleet.logistics.management.api.modules._auth_identity_domain.domain.models.User;
-import lk.modular.monolithic.smart.fleet.logistics.management.api.modules._auth_identity_domain.domain.repositories.UserRepository;
+import lk.modular.monolithic.smart.fleet.logistics.management.api.modules._auth_identity_domain.domain.repositories.UserRepositoryPort;
 import lk.modular.monolithic.smart.fleet.logistics.management.api.modules._auth_identity_domain.infrastructure.persistence.entities.UserEntity;
 import lk.modular.monolithic.smart.fleet.logistics.management.api.modules._auth_identity_domain.infrastructure.persistence.jpa.JpaUserRepository;
 import lk.modular.monolithic.smart.fleet.logistics.management.api.modules._auth_identity_domain.infrastructure.persistence.persistenceMapper.UserPersistenceMapper;
@@ -9,13 +9,13 @@ import lk.modular.monolithic.smart.fleet.logistics.management.api.modules._auth_
 import java.util.Optional;
 import java.util.UUID;
 
-public class UserRepositoryImpl implements UserRepository {
+public class UserRepositoryPortImpl implements UserRepositoryPort {
 
     //inject required dependencies
     private final JpaUserRepository jpaUserRepository;
     private final UserPersistenceMapper userPersistenceMapper;
 
-    public UserRepositoryImpl(
+    public UserRepositoryPortImpl(
             JpaUserRepository jpaUserRepository,
             UserPersistenceMapper userPersistenceMapper
     ) {

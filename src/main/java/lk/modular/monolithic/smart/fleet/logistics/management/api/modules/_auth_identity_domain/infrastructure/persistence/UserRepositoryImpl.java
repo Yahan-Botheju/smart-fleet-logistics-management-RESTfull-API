@@ -39,6 +39,12 @@ public class UserRepositoryImpl implements UserRepository {
                 .map(userPersistenceMapper::toDomainModel);
     }
 
+    //check user existence by email
+    @Override
+    public Boolean existsByEmail(String email) {
+        return jpaUserRepository.existsByEmail(email);
+    }
+
 
 
 

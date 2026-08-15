@@ -32,6 +32,13 @@ public class UserRepositoryImpl implements UserRepository {
                 .map(userPersistenceMapper::toDomainModel);
     }
 
+    //user find by email
+    @Override
+    public Optional<User> findByEmail(String email) {
+        return jpaUserRepository.findByEmail(email)
+                .map(userPersistenceMapper::toDomainModel);
+    }
+
 
 
 

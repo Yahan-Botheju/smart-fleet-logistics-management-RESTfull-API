@@ -27,13 +27,21 @@ public class User {
         this.updatedAt = updatedAt;
     }
 
-    //domain business logics
+    /* __DOMAIN_BUSINESS_LOGICS__ */
 
     //user activate
     public void activate() {
         this.isActive = true;
         this.updatedAt = LocalDateTime.now();
     }
+
+    //deactivate user
+    public  void deActivate() {
+        this.isActive = false;
+        this.updatedAt = LocalDateTime.now();
+    }
+
+    /* __GETTERS_SETTERS__ */
 
     public UUID getUserId() {
         return userId;

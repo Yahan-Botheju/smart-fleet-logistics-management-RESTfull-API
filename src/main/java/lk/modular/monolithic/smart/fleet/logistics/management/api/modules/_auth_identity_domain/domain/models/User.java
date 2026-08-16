@@ -27,6 +27,18 @@ public class User {
         this.updatedAt = updatedAt;
     }
 
+
+    /* __GETTERS__ */
+
+    public UUID getUserId() { return userId; }
+    public String getUsername() { return username; }
+    public String getEmail() { return email; }
+    public String getPasswordHashed() { return passwordHashed; }
+    public Roles getRole() { return role; }
+    public boolean isActive() { return isActive; }
+    public LocalDateTime getCreatedAt() { return createdAt; }
+    public LocalDateTime getUpdatedAt() { return updatedAt; }
+
     /* __DOMAIN_BUSINESS_LOGICS__ */
 
     //user activate
@@ -41,69 +53,4 @@ public class User {
         this.updatedAt = LocalDateTime.now();
     }
 
-    /* __GETTERS_SETTERS__ */
-
-    public UUID getUserId() {
-        return userId;
-    }
-
-    public void setUserId(UUID userId) {
-        this.userId = userId;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPasswordHashed() {
-        return passwordHashed;
-    }
-
-    public void setPasswordHashed(String passwordHashed) {
-        this.passwordHashed = passwordHashed;
-    }
-
-    public Roles getRole() {
-        return role;
-    }
-
-    public void setRole(Roles role) {
-        this.role = role;
-    }
-
-    public boolean isActive() {
-        return isActive;
-    }
-
-    public void setActive(boolean active) {
-        isActive = active;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
 }
